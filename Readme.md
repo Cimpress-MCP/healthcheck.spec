@@ -45,13 +45,13 @@ tests.{component}.error           | No        | String        | An optional desc
   "duration_millis": "15.8",
   "tests":
     "cassandra": {
-        "duration_millis": 5.6,
-        "test_result": "passed",
-        "tested_at": "2015-06-25T14:33:15.229Z"
+      "duration_millis": 5.6,
+      "result": "passed",
+      "tested_at": "2015-06-25T14:33:15.229Z"
     },
     "redis": {
       "duration_millis": 15.6,
-      "test_result": "failed",
+      "result": "failed",
       "tested_at": "2015-06-25T14:33:15.286Z"
       "error": "Unable to connect to myredis.mydomain.com:6379"
     }
