@@ -1,0 +1,64 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title: Healthcheck example API
+  description: Add a descriptive healthcheck to your application
+  version: "1.0.0"
+host: myhealthcheck.mydomain.com
+schemes:
+  - http
+  - https
+produces:
+  - application/json
+paths:
+  /healthcheck:
+    get:
+      summary: Health Check
+      description: The healthcheck endpoint provides detailed information about the health of a web service. If each of the components required by the service are healthy, then the service is considered healthy and will return a 200 OK response. If any of the components needed by the service are unhealthy, then a 503 Service Unavailable response will be provided.
+      responses:
+        200:
+          description: Health Check report
+          schema:
+            $ref: '#/definitions/Healthcheck'
+        503:
+          description: Unhealthy Service
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Error:
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
+  Healthcheck:
+    properties:
+      generated_at:
+        type: string
+        format: date-time
+        description: The ISO8601 date and time representing the start of the healthcheck report
+      duration_millis:
+        type: number
+        description: The number of milliseconds that the healthecheck report took to generate
+      tests:
+        type: object
+        additionalProperties:
+          type: object
+          additionalProperties:
+            $ref: '#/definitions/HealthcheckTest'
+  HealthcheckTest:
+    properties:
+      tested_at:
+        type: string
+        format: date-time
+        description: The IS08601 date and time representing the start of the test
+      result:
+        type: string
+        description: The result of running the test
+        enum:
+          - passed
+          - failed
