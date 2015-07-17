@@ -60,4 +60,4 @@ tests.{component}.error           | No        | String        | An optional desc
 ```
 
 ## Swagger spec
-See [spec.yaml](spec.yaml) for a full swagger implementation of the spec described above.
+See [swagger.yaml](swagger.yaml) for a full swagger implementation of the spec described above.
