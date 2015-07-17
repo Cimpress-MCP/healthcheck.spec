@@ -1,10 +1,10 @@
 # healthcheck.spec
 
-A json specification for describing the health of your web service, including all its required components. Inspired and heavily influenced by [Beamly's SE4](https://github.com/beamly/SE4/blob/master/SE4.md) spec.
+A swagger specification for using json to describe the health of your web service, including all its required components. Inspired and heavily influenced by [Beamly's SE4](https://github.com/beamly/SE4/blob/master/SE4.md) spec.
 
 ## GET /healthcheck
 
-The healthcheck resource provides information about internal health and its perceived health of downstream dependencies.
+The healthcheck resource provides information about a service's internal health and the perceived health of its downstream dependencies.
 
 ### Response Status Codes
 
@@ -23,7 +23,7 @@ Element Path                      | Required? | Type          | Description     
 ----------------------------------|-----------|---------------|-----------------------------------------------------------------|---------------------------------
 generated_at                      | Yes       | DateTime      | The time at which this report was generated                     | "2014-03-12T20:16:55.447Z"
 duration_millis                   | Yes       | String        | The number of milliseconds it took to generate the report       | "15.8"
-tests                             | Yes       | Object        | Object containing a set of test results keyed by component name |
+tests                             | Yes       | Object        | Object containing one or more test results keyed by component   |
 tests.{component}.duration_millis | Yes       | Float         | Number of milliseconds taken to run the test                    | 1.0
 tests.{component}.result          | Yes       | String (Enum) | The state of the test, must be "passed" or "failed"             | "passed"
 tests.{component}.tested_at       | Yes       | DateTime      | The time at which this test was executed                        | "2014-03-12T20:16:45.013Z"
