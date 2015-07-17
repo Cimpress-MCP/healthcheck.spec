@@ -35,7 +35,7 @@ tests.{component}.error           | No        | String        | An optional desc
 < HTTP/1.1 503 Service Unavailable
 < Server: cpt-server-i/0.0.1/1552 (ip-10-0-1-164 HttpServer2/1552)
 < X-Request-Id: req941baf96-cc86-11e3-e4b9-add31c37a536
-< X-Request-Time: 11ms
+< X-Request-Time: 16ms
 < Cache-Control: no-cache
 < Content-Type: application/json
 < Content-Length: 441
