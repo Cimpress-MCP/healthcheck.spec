@@ -1,6 +1,6 @@
 # healthcheck.spec
 
-A json specification for describing the health of your web service, including all it's required components. Inspired and heavily influenced by [Beamly's SE4](https://github.com/beamly/SE4/blob/master/SE4.md) spec.
+A json specification for describing the health of your web service, including all its required components. Inspired and heavily influenced by [Beamly's SE4](https://github.com/beamly/SE4/blob/master/SE4.md) spec.
 
 ## GET /healthcheck
 
