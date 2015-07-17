@@ -36,6 +36,10 @@ definitions:
       fields:
         type: string
   Healthcheck:
+    required:
+      - generated_at
+      - duration_millis
+      - tests
     properties:
       generated_at:
         type: string
@@ -51,6 +55,10 @@ definitions:
           additionalProperties:
             $ref: '#/definitions/HealthcheckTest'
   HealthcheckTest:
+    required:
+      - tested_at
+      - result
+      - duration_millis
     properties:
       tested_at:
         type: string
@@ -62,3 +70,9 @@ definitions:
         enum:
           - passed
           - failed
+      duration_millis:
+        type: number
+        description: The number of milliseconds that the test took to executed
+      error:
+        type: string
+        description: A string describing any error conditions that were experienced
