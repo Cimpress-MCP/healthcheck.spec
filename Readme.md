@@ -43,7 +43,7 @@ tests.{component}.error           | No        | String        | An optional desc
 {
   "generated_at": "2015-06-25T14:33:33.383Z",
   "duration_millis": "15.8",
-  "tests":
+  "tests": {
     "cassandra": {
       "duration_millis": 5.6,
       "result": "passed",
@@ -52,7 +52,7 @@ tests.{component}.error           | No        | String        | An optional desc
     "redis": {
       "duration_millis": 15.6,
       "result": "failed",
-      "tested_at": "2015-06-25T14:33:15.286Z"
+      "tested_at": "2015-06-25T14:33:15.286Z",
       "error": "Unable to connect to myredis.mydomain.com:6379"
     }
   }
