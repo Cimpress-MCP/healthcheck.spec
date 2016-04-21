@@ -23,11 +23,13 @@ Element Path                      | Required? | Type          | Description     
 ----------------------------------|-----------|---------------|-----------------------------------------------------------------|---------------------------------
 generated_at                      | Yes       | DateTime      | The time at which this report was generated                     | "2014-03-12T20:16:55.447Z"
 duration_millis                   | Yes       | String        | The number of milliseconds it took to generate the report       | "15.8"
+uptime                            | Yes       | Float         | The time in seconds since the application was started           | 4567.89
 tests                             | Yes       | Object        | Object containing one or more test results keyed by component   |
 tests.{component}.duration_millis | Yes       | Float         | Number of milliseconds taken to run the test                    | 1.0
 tests.{component}.result          | Yes       | String (Enum) | The state of the test, must be "passed" or "failed"             | "passed"
 tests.{component}.tested_at       | Yes       | DateTime      | The time at which this test was executed                        | "2014-03-12T20:16:45.013Z"
 tests.{component}.error           | No        | String        | An optional description of any error conditions                 | "Request timed out after 2000ms"
+data                              | No        | Object        | Arbitrary data to display information about your application    | {"hostname": "myserver-100.example.com", "config": {"env": "prod"}}
 
 ### Example
 
@@ -43,6 +45,7 @@ tests.{component}.error           | No        | String        | An optional desc
 {
   "generated_at": "2015-06-25T14:33:33.383Z",
   "duration_millis": "15.8",
+  "uptime": 4567.89,
   "tests": {
     "cassandra": {
       "duration_millis": 5.6,
@@ -55,6 +58,10 @@ tests.{component}.error           | No        | String        | An optional desc
       "tested_at": "2015-06-25T14:33:15.286Z",
       "error": "Unable to connect to myredis.mydomain.com:6379"
     }
+  },
+  "data": {
+    "hostname": "myserver-100.example.com",
+    "config": {"env": "prod"}
   }
 }
 ```
