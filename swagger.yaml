@@ -26,7 +26,7 @@ paths:
               {
                 "generated_at": "2015-06-25T14:33:33.383Z",
                 "duration_millis": "15.8",
-                "uptime": 4567.89,
+                "uptime_seconds": 4567.89,
                 "tests": {
                   "cassandra": {
                     "duration_millis": 5.6,
@@ -56,7 +56,7 @@ paths:
               {
                 "generated_at": "2015-06-25T14:33:33.383Z",
                 "duration_millis": "15.8",
-                "uptime": 4567.89,
+                "uptime_seconds": 4567.89,
                 "tests": {
                   "cassandra": {
                     "duration_millis": 5.6,
@@ -91,7 +91,6 @@ definitions:
     required:
       - generated_at
       - duration_millis
-      - uptime
       - tests
     properties:
       generated_at:
@@ -101,7 +100,7 @@ definitions:
       duration_millis:
         type: number
         description: The number of milliseconds that the healthecheck report took to generate
-      uptime:
+      uptime_seconds:
         type: number
         format: float
         description: The time in seconds since the application was started

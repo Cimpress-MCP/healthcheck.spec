@@ -23,7 +23,7 @@ Element Path                      | Required? | Type          | Description     
 ----------------------------------|-----------|---------------|-----------------------------------------------------------------|---------------------------------
 generated_at                      | Yes       | DateTime      | The time at which this report was generated                     | "2014-03-12T20:16:55.447Z"
 duration_millis                   | Yes       | String        | The number of milliseconds it took to generate the report       | "15.8"
-uptime                            | Yes       | Float         | The time in seconds since the application was started           | 4567.89
+uptime_seconds                    | No        | Float         | The time in seconds since the application was started           | 4567.89
 tests                             | Yes       | Object        | Object containing one or more test results keyed by component   |
 tests.{component}.duration_millis | Yes       | Float         | Number of milliseconds taken to run the test                    | 1.0
 tests.{component}.result          | Yes       | String (Enum) | The state of the test, must be "passed" or "failed"             | "passed"
@@ -45,7 +45,7 @@ data                              | No        | Object        | Arbitrary data t
 {
   "generated_at": "2015-06-25T14:33:33.383Z",
   "duration_millis": "15.8",
-  "uptime": 4567.89,
+  "uptime_seconds": 4567.89,
   "tests": {
     "cassandra": {
       "duration_millis": 5.6,
