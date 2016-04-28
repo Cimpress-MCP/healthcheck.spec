@@ -26,6 +26,7 @@ paths:
               {
                 "generated_at": "2015-06-25T14:33:33.383Z",
                 "duration_millis": "15.8",
+                "uptime_seconds": 4567.89,
                 "tests": {
                   "cassandra": {
                     "duration_millis": 5.6,
@@ -38,6 +39,12 @@ paths:
                     "tested_at": "2015-06-25T14:33:15.286Z",
                     "error": "Unable to connect to myredis.mydomain.com:6379"
                   }
+                },
+                "data": {
+                  "hostname": "myserver-100.example.com",
+                  "config": {
+                    "env": "prod"
+                  }
                 }
               }
         503:
@@ -49,6 +56,7 @@ paths:
               {
                 "generated_at": "2015-06-25T14:33:33.383Z",
                 "duration_millis": "15.8",
+                "uptime_seconds": 4567.89,
                 "tests": {
                   "cassandra": {
                     "duration_millis": 5.6,
@@ -60,6 +68,12 @@ paths:
                     "result": "failed",
                     "tested_at": "2015-06-25T14:33:15.286Z",
                     "error": "Unable to connect to myredis.mydomain.com:6379"
+                  }
+                },
+                "data": {
+                  "hostname": "myserver-100.example.com",
+                  "config": {
+                    "env": "prod"
                   }
                 }
               }
@@ -86,12 +100,18 @@ definitions:
       duration_millis:
         type: number
         description: The number of milliseconds that the healthecheck report took to generate
+      uptime_seconds:
+        type: number
+        format: float
+        description: The time in seconds since the application was started
       tests:
         type: object
         additionalProperties:
           type: object
           additionalProperties:
             $ref: '#/definitions/HealthcheckTest'
+      data:
+        type: object
   HealthcheckTest:
     required:
       - tested_at
